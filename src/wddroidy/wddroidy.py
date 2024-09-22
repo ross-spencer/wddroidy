@@ -437,7 +437,7 @@ async def main():
     filename = args.output
     if args.output_date:
         filename = (
-            f"DROID_SignatureFile_WDQS_{get_utc_timestamp_now().replace(":", "-")}.xml"
+            f"DROID_SignatureFile_WDQS_{get_utc_timestamp_now().replace(':', '-')}.xml"
         )
     await process_results(results=data, filename=filename)
 
