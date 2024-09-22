@@ -2,7 +2,7 @@
 <p align="center">
     <img
         width="786"
-        height="204"
+        height="404"
         alt="Logo for wddroidy"
         src="https://raw.githubusercontent.com/ross-spencer/wddroidy/main/logo/wddroidy.png">
 </p>
