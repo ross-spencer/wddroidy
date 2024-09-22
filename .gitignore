@@ -1,0 +1,6 @@
+venv/*
+test.xml
+DROID_*
+__pycache*
+dist/*
+src/wddroidy.egg-info/*

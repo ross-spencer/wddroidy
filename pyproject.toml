@@ -1,0 +1,21 @@
+[project]
+
+name = "wddroidy"
+
+authors = [
+    {name = "Ross Spencer", email = "all.along.the.watchtower2001+github@gmail.com"},
+]
+
+dynamic = ["version", "dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements/requirements.txt"]}
+
+[project.scripts]
+send_request = "wddroidy.wddroidy:main"
+
+[build-system]
+requires = ["setuptools>=74.0.0", "wheel>=0.44.0", "setuptools_scm[toml]>=8.1.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
