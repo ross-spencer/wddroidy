@@ -295,7 +295,12 @@ async def extract_sigs(qid: list):
         sig = pre_process_signature(item)
         valid_sig = re.fullmatch(PRONOM_REGEX_ALLOWED, sig)
         if not valid_sig:
-            logger.info("rejecting sig data for: %s", entity)
+            logger.info("rejecting sig data for: '%s' based on regex", entity)
+            continue
+        if [val for val in ("{", "}", ":", "-", "[", "]", "*") if val in sig]:
+            pass
+        elif len(sig) % 2 != 0:
+            logger.info("rejecting sig data for: '%s' based on length", entity)
             continue
         rel = item.get("relativity", {}).get("value", None)
         if not rel:
@@ -318,7 +323,9 @@ async def extract_sigs(qid: list):
         bof = rels.count(BOF_OFFSET)
         eof = rels.count(EOF_OFFSET)
         if bof > 2 and eof >= 1:
-            logging.info("rejecting sig data for: %s", entity)
+            logging.info(
+                "rejecting sig data for: '%s' based on cardinality of sequences", entity
+            )
             return []
     return sig_data
 
