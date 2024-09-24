@@ -6,7 +6,7 @@ help:
 tar-source: package-deps
 	rm -rf tar-src/
 	mkdir tar-src/
-	git-archive-all --prefix template/ tar-src/template-v0.0.0.tar.gz
+	git-archive-all --prefix wddroidy/ tar-src/wddroidy-v0.0.0.tar.gz
 
 ## Upgrade dependencies for packaging
 package-deps:
